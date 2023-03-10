@@ -1,11 +1,14 @@
 from django.shortcuts import render
-from .models import Banner
+from .models import Banner, TeamMember
 
 # Create your views here.
 def home(request):
     banners = Banner.objects.all
+    team_members = TeamMember.objects.all
+
     data = {
-        "banners": banners
+        "banners": banners,
+        "team": team_members
     }
     return render(request, 'webpages/home.html', data)
 
