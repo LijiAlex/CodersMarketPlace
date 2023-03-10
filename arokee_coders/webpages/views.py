@@ -1,8 +1,13 @@
 from django.shortcuts import render
+from .models import Banner
 
 # Create your views here.
 def home(request):
-    return render(request, 'webpages/home.html')
+    banners = Banner.objects.all
+    data = {
+        "banners": banners
+    }
+    return render(request, 'webpages/home.html', data)
 
 def about(request):
     return render(request, 'webpages/about.html')

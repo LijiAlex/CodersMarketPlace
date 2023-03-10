@@ -79,7 +79,7 @@ WSGI_APPLICATION = "arokee_coders.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
-        "NAME": "school",
+        "NAME": "arokee_coders",
         "USER": "root",
         "PASSWORD": "liji"
     }
