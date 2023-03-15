@@ -1,8 +1,8 @@
 :root {
-	--primary: #232730;
-	--secondary: #3a3e45;
-	--white: #888787;
-	--accent: #e56237;
+	--primary: #041338;
+	--secondary: #144baa;
+	--white: #ffffff;
+	--accent: #698cc3;
 }
 
 body {
@@ -19,6 +19,9 @@ h3 {
 	color: var(--accent);
 }
 .btn-accent {
+	border: 3px solid;
+  	padding: 0.25em 0.5em;
+  	box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px;
 	background-color: var(--accent);
 	color: #fff;
 	border-color: var(--accent);
@@ -57,6 +60,14 @@ main {
 }
 
 .table {
+	color: #fff;
+}
+
+.nav-link {
+	background-color: var(--accent);
+	border: none;
+	padding: 10px 20px;
+	line-height: none;
 	color: #fff;
 }
 
