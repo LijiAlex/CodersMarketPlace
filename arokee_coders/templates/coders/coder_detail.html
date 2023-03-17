@@ -1,1 +1,118 @@
-<h1> Coder specific page {{coder_id}} </h1>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<main class="single-page-coders">
+        <div class="banner">
+          <img src="{% static './assets/images/bg-banner.png' %}" alt="" class="img-fluid w-100">
+        </div>
+        <h1 class="text-center">
+          {{ coder.name }}
+        </h1>
+
+        <section class="head container mt-5 mb-5">
+          <div class="row">
+            <div class="col-md-4 d-flex justify-content-center align-items-center">
+              <h1 class="text-center">{{ coder.category }}</h1>
+            </div>
+            <div class="col-md-4 d-flex justify-content-center align-items-center">
+              <h1 class="text-center">$ {{ coder.hourly_rate }}</h1>
+            </div>
+            <div class="col-md-4 d-flex justify-content-center align-items-center">
+              <img src="{{ coder.photo.url }}" class="img-fluid" alt="team-member">
+            </div>
+          </div>
+        </section>
+
+        <section class="video container text-center">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/{{coder.video_intro}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </section>
+
+        <section class="descritpion container">
+          <h4>Descritpion</h4>
+          <p class="mt-2 mb-2">
+            {{coder.description}}
+          </p>
+          <h4>Work History</h4>
+          <p class="mt-2 mb-2">
+            {{coder.work_history | safe}}
+          </p>
+    
+    
+        </section>
+    
+        <section class="container w-50">
+    
+            <div class="person-description mt-2">
+                <button class="btn btn-accent"> City: {{ coder.city }} </button>
+                <button class="btn btn-accent"> Rate: ${{ coder.hourly_rate }} </button>
+                <button class="btn btn-accent"> Hours: {{ coder.commit_hours }} </button>
+            </div>
+            <div class="person-description mt-2">
+                <button class="btn btn-accent"> Type: {{ coder.type }} </button>
+                <button class="btn btn-accent"> Skill Set: {{ coder.skill_set }} </button>
+                <button class="btn btn-accent"> Hired :  {{ coder.hired }} </button>
+            </div>
+
+          <div class="text-center mt-2">
+            <a href="{{ coder.github_link }}">
+            <button class="btn btn-accent"> <i class="fab fa-github fa-lg"></i> </button>
+            </a>
+            <a href="{{ coder.linkedin_link }}">
+            <button class="btn btn-accent"> <i class="fab fa-linkedin-in fa-lg"></i> </button>
+            </a>
+            <a href="{{ coder.portfolio_link }}">
+                    <button class="btn btn-accent"> Portfolio </button>
+            </a>
+      </div>
+    
+        </section>
+    
+        <section class="coder-form container mt-5 mb-5">
+          <div class="row">
+            <form class="col-md-8 offset-md-2">
+              <h3 class="pt-2 pb-2">Fill the Form and reach out</h3>
+    
+              <div class="form-row">
+                <div class="form-group col-md-4">
+                  <input type="email" class="form-control" placeholder="First Name">
+                </div>
+                <div class="form-group col-md-4">
+                  <input type="password" class="form-control" placeholder="Last Name">
+                </div>
+                <div class="form-group col-md-4">
+                  <input type="email" class="form-control" placeholder="Email">
+                </div>
+              </div>
+    
+              <div class="form-group">
+                <input type="password" class="form-control" placeholder="Interested In...">
+              </div>
+    
+              <div class="form-row">
+                <div class="form-group col-md-4">
+                  <input type="text" class="form-control" placeholder="City">
+                </div>
+                <div class="form-group col-md-4">
+                  <input type="text" class="form-control" placeholder="State">
+                </div>
+                <div class="form-group col-md-4">
+                  <input type="text" class="form-control" placeholder="Phone Number">
+                </div>
+    
+              </div>
+    
+              <div class="form-group pt-2">
+                <textarea class="form-control" rows="3" placeholder="Details Message"></textarea>
+              </div>
+              <div class="text-center">
+                <button type="submit" class="btn btn-accent">Contact Us</button>
+              </div>
+    
+            </form>
+          </div>
+    
+        </section>
+    
+</main>
+{% endblock %}

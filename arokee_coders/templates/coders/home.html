@@ -14,7 +14,9 @@
             {% for coder in coders %}
             <div class="card border-0 text-center">
               <div class="feature-text">
-                <img src="{{ coder.photo.url }}" class="card-img-top" alt="team-member">
+                <a href="{% url 'coder_detail' coder.id %}">
+                  <img src="{{ coder.photo.url }}" class="card-img-top" alt="team-member">
+                </a>
                 {% if coder.is_featured == True %}
                 <span class="text-left bg-accent font-weight-bold">
                   Featured

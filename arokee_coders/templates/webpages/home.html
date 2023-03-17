@@ -47,7 +47,10 @@
         <!-- person 1 -->
         <div class="card border-0 text-center ml-3 mr-3">
           <div class="feature-text">
-            <img src="{{ fcoder.photo.url }}" class="card-img-top" alt="team-member">
+            <a href="{% url 'coder_detail' fcoder.id %}">
+              <img src="{{ fcoder.photo.url }}" class="card-img-top" alt="team-member">
+            </a>
+
             <span class="text-left bg-accent font-weight-bold">
               Featured
             </span>
@@ -91,7 +94,9 @@
           <!-- person 1 -->
           <div class="card border-0 text-center ml-3 mr-3">
             <div class="feature-text">
-              <img src="{{ ncoder.photo.url }}" class="card-img-top" alt="team-member">
+              <a href="{% url 'coder_detail' ncoder.id %}">
+                <img src="{{ ncoder.photo.url }}" class="card-img-top" alt="team-member">
+              </a>
               <span class="text-left bg-accent font-weight-bold">
                 New
               </span>
