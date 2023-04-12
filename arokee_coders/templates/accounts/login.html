@@ -25,8 +25,8 @@
         <div class="text-center">
           OR
         </div>
-
-        <button class="btn btn-primary form-btn w-100 mt-3">Facebook</button>
+        {% load socialaccount %}
+        <a href="{% provider_login_url 'github' %}" class="btn btn-primary form-btn w-100 mt-3" >Github</a>
         <button class="btn btn-accent form-btn w-100 mt-3 mb-3">Google</button>
 
       </form>
